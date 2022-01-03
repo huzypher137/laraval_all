@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,9 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
 
 Route::get('/',[PagesController::class,'home']);
@@ -24,4 +25,4 @@ Route::get('/about',[PagesController::class,'about']);
 Route::get('/posts',[PagesController::class,'posts']);
 Route::get('/contact',[PagesController::class,'contact']);
 
-Route::get('about/{{$id}}','PagesControllers@about');
+Route::resource('perge','PostController');
